@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pixelcraftweb-qa.github.io/pixelcraft-website/sitemap.xml
