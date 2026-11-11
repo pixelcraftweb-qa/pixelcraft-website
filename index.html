@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelCraft Web</title>
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111827;
+  }
+
+  .logo {
+    color: #38bdf8;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  nav a:hover {
+    color: #38bdf8;
+  }
+
+#services {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: #0f172a;
+}
+
+#services h2 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #1e293b;
+  padding: 35px;
+  border-radius: 15px;
+  width: 260px;
+  color: white;
+  transition: 0.3s;
+}
+
+.service-card h3 {
+  color: #38bdf8;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px #00000055;
+}
+
+#about {
+  background-color: #111827;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+#about h2 {
+  font-size: 38px;
+  color: #38bdf8;
+  margin-bottom: 25px;
+}
+
+#about p {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#contact {
+  padding: 80px 20px;
+  background-color: #111827;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #38bdf8;
+  font-size: 38px;
+}
+
+#contact p {
+  color: white;
+  margin-bottom: 30px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  margin: auto;
+}
+
+#contact input,
+#contact textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#contact textarea {
+  min-height: 120px;
+}
+
+#contact button {
+  padding: 15px;
+  background-color: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">PixelCraft Web</div>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+  </nav>
+</header>
+  <h1 id="home">Welcome to PixelCraft Web</h1>
+<p>We create modern, professional websites for businesses worldwide.</p>
+  <button>Contact Us</button>
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="services-container">
+
+    <div class="service-card">
+      <h3>Web Design</h3>
+      <p>Beautiful and modern website designs.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Website Development</h3>
+      <p>Fast and professional websites.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Website Redesign</h3>
+      <p>We transform old websites into modern ones.</p>
+    </div>
+
+  </div>
+</section>
+<section id="about">
+  <div class="about-container">
+    <h2>About PixelCraft Web</h2>
+
+    <p>
+      PixelCraft Web is a creative digital
+      agency specializing in modern,
+      professional, and responsive websites.
+    </p>
+
+    <p>
+      We help businesses build a strong
+      online presence through innovative
+      design and smart technology.
+    </p>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Have a project in mind? Let's talk!</p>
+
+  
+<form
+  id="contact-form"
+  action="https://formspree.io/f/xljjyqwo"
+  method="POST"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+  >
+
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    required
+  ></textarea>
+
+  <button type="submit">
+    Send Message
+  </button>
+</form>
+
+</section>
+
+
+</body>
+</html>
