@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAVORA | Fine Dining Restaurant</title>
+  <style>
+    :root {
+      --dark: #171c18;
+      --cream: #f8f5ee;
+      --gold: #c6a66a;
+      --muted: #777;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #171c18;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: normal;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 16px 32px;
+      background: var(--gold);
+      color: #171c18;
+      font-weight: bold;
+      border-radius: 3px;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: #e2c48d; }
+
+    section { padding: 95px 7%; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 5vw, 54px);
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .menu-card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.06);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-info { padding: 25px; }
+
+    .menu-info h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .menu-info p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .price {
+      color: #9c7738;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    .about {
+      background: #eae5da;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+    }
+
+    .about h2 {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+    }
+
+    .about p {
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .reservation {
+      text-align: center;
+      background: #171c18;
+      color: white;
+    }
+
+    .reservation h2 {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+    }
+
+    .reservation p { color: #ccc; }
+
+    form {
+      max-width: 620px;
+      margin: 35px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #555;
+      background: #262c27;
+      color: white;
+      font: inherit;
+      border-radius: 3px;
+    }
+
+    form button { grid-column: 1 / -1; }
+
+    .form-note {
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    footer {
+      background: #101411;
+      color: #aaa;
+      padding: 35px 7%;
+      text-align: center;
+    }
+
+    footer strong { color: var(--gold); }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav { justify-content: center; }
+
+      .menu-grid { grid-template-columns: 1fr; }
+
+      .about { grid-template-columns: 1fr; }
+
+      .about img { height: 320px; }
+
+      form { grid-template-columns: 1fr; }
+
+      section { padding: 70px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#home" class="logo">SAVORA</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Our Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#reservation">Reservations</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">An unforgettable dining experience</div>
+        <h1>Where Flavor Meets Elegance</h1>
+        <p>
+          Discover exquisite dishes, carefully selected
+          ingredients and an atmosphere made for memorable moments.
+        </p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="section-heading">
+        <div class="eyebrow">Crafted with passion</div>
+        <h2>Our Signature Dishes</h2>
+        <p>A taste of the extraordinary, made fresh for every guest.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+            alt="Fresh gourmet dish"
+            loading="lazy">
+          <div class="menu-info">
+            <h3>Garden Harvest</h3>
+            <p>Fresh seasonal vegetables with a chef-inspired dressing.</p>
+            <div class="price">$18</div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85"
+            alt="Signature gourmet main course"
+            loading="lazy">
+          <div class="menu-info">
+            <h3>Chef's Signature</h3>
+            <p>A beautifully prepared main course with rich flavors.</p>
+            <div class="price">$32</div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+            alt="Artisan dessert"
+            loading="lazy">
+          <div class="menu-info">
+            <h3>Sweet Indulgence</h3>
+            <p>A delightful dessert to complete your dining experience.</p>
+            <div class="price">$14</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <img
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85"
+        alt="Elegant restaurant dining room"
+        loading="lazy">
+
+      <div>
+        <div class="eyebrow">Our story</div>
+        <h2>More Than Just Dining</h2>
+        <p>
+          At SAVORA, we believe great food brings people together.
+          Our restaurant concept combines warm hospitality,
+          beautiful surroundings and thoughtfully crafted dishes.
+        </p>
+        <p>
+          Every detail is designed to make your visit special,
+          from the first welcome to the final bite.
+        </p>
+        <a href="#reservation" class="btn">Reserve Your Table</a>
+      </div>
+    </section>
+
+    <section class="reservation" id="reservation">
+      <div class="eyebrow">Join us</div>
+      <h2>Reserve Your Table</h2>
+      <p>Plan a special evening with SAVORA.</p>
+
+      <form id="booking-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="date" name="date" aria-label="Reservation date" required>
+        <select name="guests" aria-label="Number of guests" required>
+          <option value="">Number of Guests</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6">6 Guests</option>
+        </select>
+        <button type="submit" class="btn">Request Reservation</button>
+      </form>
+
+      <p id="booking-message" class="form-note" role="status">
+        Demo only — no real reservations are submitted.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>SAVORA</strong>
+    <p>Fine Dining Restaurant — Website Demo</p>
+    <p>Concept created by PixelCraft Web</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("booking-form");
+    const dateInput = form.elements.date;
+
+    const today = new Date();
+    const localDate = new Date(
+      today.getTime() - today.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0];
+
+    dateInput.min = localDate;
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("booking-message").textContent =
+        "Demo request received on this page only. No booking was made.";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

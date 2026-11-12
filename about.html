@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | PixelCraft Web</title>
+  <meta name="description" content="Learn about PixelCraft Web and our approach to modern website design.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: #080b19;
+    }
+
+    header {
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #252940;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #a78bfa;
+    }
+
+    .about {
+      min-height: 85vh;
+      padding: 100px 7%;
+      text-align: center;
+      background: radial-gradient(circle at 80% 10%, #29205c, transparent 45%),
+                  linear-gradient(135deg, #080b19, #121a35);
+    }
+
+    .about h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin-bottom: 20px;
+    }
+
+    .about h1 span {
+      color: #a78bfa;
+    }
+
+    .intro {
+      color: #c4c9dd;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 760px;
+      margin: 0 auto 55px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      padding: 40px 28px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(167, 139, 250, 0.22);
+      border-radius: 22px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h2 {
+      color: #38bdf8;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: #c4c9dd;
+      line-height: 1.8;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 55px;
+      padding: 17px 38px;
+      background: linear-gradient(90deg, #7c3aed, #2563eb);
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        justify-content: center;
+      }
+
+      .about {
+        padding: 70px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PixelCraft Web</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+     <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about">
+    <h1>About <span>PixelCraft Web</span></h1>
+
+    <p class="intro">
+      We are a creative web design brand focused on building
+      modern, professional and responsive websites for businesses.
+      Our goal is to help brands create a powerful online presence
+      and turn visitors into customers.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Our Mission</h2>
+        <p>
+          To help businesses grow online through beautiful,
+          fast and user-friendly websites.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Our Vision</h2>
+        <p>
+          To become a trusted web design partner for
+          businesses looking to stand out digitally.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Why Choose Us?</h2>
+        <p>
+          Modern design, responsive layouts, attention
+          to detail and a focus on your business goals.
+        </p>
+      </div>
+    </div>
+
+    <a href="contact.html" class="cta">
+      Let's Work Together
+    </a>
+  </main>
+
+</body>
+</html>

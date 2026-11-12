@@ -25,3 +25,13 @@ button {
   font-size: 18px;
   cursor: pointer;
 }
+.portfolio-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.portfolio-link:hover {
+    transform: translateY(-8px);
+}

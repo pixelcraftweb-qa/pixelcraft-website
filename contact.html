@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | PixelCraft Web</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #080b19;
+      color: white;
+    }
+
+    header {
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #252940;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #a78bfa;
+    }
+
+    .contact {
+      padding: 80px 7%;
+      min-height: 85vh;
+      background:
+        radial-gradient(circle at 80% 10%, #29205c, transparent 45%),
+        linear-gradient(135deg, #080b19, #121a35);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: clamp(38px, 6vw, 60px);
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: #a78bfa;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #c4c9dd;
+      line-height: 1.8;
+      margin-bottom: 50px;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(167,139,250,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 9px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 23px;
+      border-radius: 10px;
+      border: 1px solid #424765;
+      background: #151b32;
+      color: white;
+      font: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #8b5cf6;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 17px;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(90deg, #7c3aed, #2563eb);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .email {
+      text-align: center;
+      margin-top: 35px;
+      color: #c4c9dd;
+    }
+
+    .email a {
+      color: #38bdf8;
+    }
+
+    @media (max-width: 600px) {
+      .contact-box {
+        padding: 25px;
+      }
+
+      header {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PixelCraft Web</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact">
+    <h1>Let's <span>Work Together</span></h1>
+
+    <p class="subtitle">
+      Have a project in mind?
+      Tell us about your business and let's build
+      something amazing together.
+    </p>
+
+    <div class="contact-box">
+      <form id="contact-form">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name"
+          placeholder="Your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"
+          placeholder="you@example.com" required>
+
+        <label for="service">What service do you need?</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option>Business Website</option>
+          <option>E-Commerce Website</option>
+          <option>Website Redesign</option>
+          <option>Landing Page</option>
+          <option>Other</option>
+        </select>
+
+        <label for="message">Tell Us About Your Project</label>
+        <textarea id="message" name="message"
+          placeholder="Describe your project..."
+          required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <p class="email">
+      Or email us directly:
+      <a href="mailto:pixelcraftweb.qa@gmail.com">
+        pixelcraftweb.qa@gmail.com
+      </a>
+    </p>
+  </main>
+
+  <script>
+    document.getElementById("contact-form")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("The contact form is not connected yet.");
+      });
+  </script>
+
+</body>
+</html>

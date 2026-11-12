@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevate Consulting | Business Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #182338;
+      background: #f6f8fc;
+    }
+    header {
+      background: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #183b78;
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #182338;
+      font-weight: bold;
+    }
+    nav a:hover { color: #2563eb; }
+    .hero {
+      padding: 115px 7%;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #102448, #2563eb);
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      margin: 0 0 20px;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #fff;
+      color: #183b78;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section { padding: 85px 7%; }
+    h2 { text-align: center; font-size: 36px; }
+    .intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      color: #536176;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      padding: 38px 28px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px #142b4910;
+    }
+    .card h3 { color: #183b78; }
+    .card p { line-height: 1.7; color: #536176; }
+    .about { background: #eaf0fb; text-align: center; }
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .contact {
+      text-align: center;
+      background: #183b78;
+      color: white;
+    }
+    .contact p { margin-bottom: 30px; }
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #102448;
+      color: #cbd5e1;
+    }
+    @media (max-width: 768px) {
+      .cards { grid-template-columns: 1fr; }
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      section { padding: 65px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Elevate Consulting</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <h1>We Help Businesses Grow</h1>
+    <p>
+      Strategic consulting and innovative solutions
+      to help your business reach its full potential.
+    </p>
+    <a href="#services" class="btn">Explore Our Services</a>
+  </div>
+
+  <section id="services">
+    <h2>Our Expertise</h2>
+    <p class="intro">
+      Practical business solutions designed to help
+      companies grow and succeed.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>📈 Business Strategy</h3>
+        <p>Clear strategies to improve performance and achieve long-term growth.</p>
+      </div>
+      <div class="card">
+        <h3>💼 Management Consulting</h3>
+        <p>Professional guidance to optimize operations and business processes.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Digital Transformation</h3>
+        <p>Modern digital solutions that make businesses more competitive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Elevate Consulting</h2>
+    <p>
+      We are a forward-thinking consulting company
+      dedicated to helping organizations overcome
+      challenges, discover opportunities, and build
+      a stronger future.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Ready to Grow Your Business?</h2>
+    <p>Discover how our team can support your next big step.</p>
+    <a href="contact.html" class="btn">Contact PixelCraft Web</a>
+  </section>
+
+  <footer>
+    Concept website designed by PixelCraft Web.
+    This is a demonstration project.
+  </footer>
+
+</body>
+</html>
