@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAVORA | Fine Dining Restaurant</title>
+<style>
+    :root {
+      --dark: #171c18;
+      --cream: #f8f5ee;
+      --gold: #c6a66a;
+      --muted: #777;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #171c18;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content { max-width: 850px; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: normal;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 16px 32px;
+      background: var(--gold);
+      color: #171c18;
+      font-weight: bold;
+      border-radius: 3px;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: #e2c48d; }
+
+    section { padding: 95px 7%; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 5vw, 54px);
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .menu-card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.06);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-info { padding: 25px; }
+
+    .menu-info h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .menu-info p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .price {
+      color: #9c7738;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    .about {
+      background: #eae5da;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+    }
+
+    .about h2 {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+    }
+
+    .about p {
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .reservation {
+      text-align: center;
+      background: #171c18;
+      color: white;
+    }
+
+    .reservation h2 {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+    }
+
+    .reservation p { color: #ccc; }
+
+    form {
+      max-width: 620px;
+      margin: 35px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #555;
+      background: #262c27;
+      color: white;
+      font: inherit;
+      border-radius: 3px;
+    }
+
+    form button { grid-column: 1 / -1; }
+
+    .form-note {
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    footer {
+      background: #101411;
+      color: #aaa;
+      padding: 35px 7%;
+      text-align: center;
+    }
+
+    footer strong { color: var(--gold); }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav { justify-content: center; }
+
+      .menu-grid { grid-template-columns: 1fr; }
+
+      .about { grid-template-columns: 1fr; }
+
+      .about img { height: 320px; }
+
+      form { grid-template-columns: 1fr; }
+
+      section { padding: 70px 6%; }
+    }
+  </style>
+<style>.pc-lang{display:inline-flex;gap:7px;align-items:center;margin:8px 12px;font:700 13px Arial,sans-serif;white-space:nowrap}.pc-lang a{color:inherit;text-decoration:none;padding:7px 9px;border:1px solid #9a8ba9;border-radius:7px}.pc-lang a[aria-current="page"]{background:#7440db;color:#fff}</style><meta content="noindex, follow" name="robots"/><meta content="نموذج موقع تجريبي من PixelCraft Web. لا يتم قبول طلبات شراء أو حجوزات حقيقية." name="description"/><link href="https://pixelcraftweb-qa.github.io/pixelcraft-website/ar/restaurant-demo.html" rel="canonical"/><link href="https://pixelcraftweb-qa.github.io/pixelcraft-website/restaurant-demo.html" hreflang="en" rel="alternate"/><link href="https://pixelcraftweb-qa.github.io/pixelcraft-website/ar/restaurant-demo.html" hreflang="ar" rel="alternate"/><script defer="" src="../language.js"></script><style>
+.pc-demo-banner{padding:10px 16px;text-align:center;background:#231342;color:#f4e9ff;font:700 11px/1.4 Arial,sans-serif;letter-spacing:.08em;position:relative;z-index:30}
+.pc-lang{display:inline-flex;direction:ltr;flex-wrap:nowrap;align-items:center;gap:5px;margin:0;padding:4px;border:1px solid #a996c3;border-radius:9px;background:rgba(120,80,160,.08);white-space:nowrap}
+.pc-lang a{font:700 12px Arial,sans-serif;padding:7px 9px;text-decoration:none;border-radius:6px;color:inherit}
+.pc-lang a[aria-current="page"]{background:#7440db;color:#fff}
+:focus-visible{outline:3px solid #9866fa;outline-offset:3px}
+[dir="rtl"] body{font-family:Tahoma,Arial,sans-serif}
+[dir="rtl"] .pc-demo-banner{direction:rtl}
+[dir="rtl"] .pc-lang{direction:ltr}
+[dir="rtl"] .hero-content,[dir="rtl"] .product-body,[dir="rtl"] .card,[dir="rtl"] .menu-info{direction:rtl}
+@media(max-width:700px){.pc-demo-banner{font-size:10px;padding:8px}.pc-lang a{padding:6px 7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*{transition:none!important;animation:none!important}}
+</style><link href="../favicon.svg" rel="icon" type="image/svg+xml"/></head>
+<body><div class="pc-demo-banner" role="note">PIXELCRAFT WEB · نموذج تجريبي — ليس نشاطاً تجارياً حقيقياً</div>
+<header>
+<a class="logo" href="#home">SAVORA</a>
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#menu">قائمة الطعام</a>
+<a href="#about">قصتنا</a>
+<a href="#reservation">الحجوزات</a>
+</nav>
+<div aria-label="Language" class="pc-lang"><a href="../restaurant-demo.html" lang="en">EN</a><a aria-current="page" href="restaurant-demo.html" lang="ar">عربي</a></div></header>
+<main>
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="eyebrow">تجربة طعام لا تُنسى</div>
+<h1>حيث يلتقي المذاق بالأناقة</h1>
+<p>اكتشف أطباقاً مميزة ومكونات مختارة بعناية وأجواء مصممة للحظات لا تُنسى.</p>
+<a class="btn" href="#menu">اكتشف قائمتنا</a>
+</div>
+</section>
+<section id="menu">
+<div class="section-heading">
+<div class="eyebrow">محضّرة بشغف</div>
+<h2>أطباقنا المميزة</h2>
+<p>نكهات استثنائية محضّرة بعناية لكل ضيف.</p>
+</div>
+<div class="menu-grid">
+<article class="menu-card">
+<img alt="Fresh gourmet dish" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=900&amp;q=85"/>
+<div class="menu-info">
+<h3>حصاد الحديقة</h3>
+<p>خضروات موسمية طازجة مع صلصة مستوحاة من وصفة الشيف.</p>
+<div class="price">$18</div>
+</div>
+</article>
+<article class="menu-card">
+<img alt="Signature gourmet main course" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&amp;fit=crop&amp;w=900&amp;q=85"/>
+<div class="menu-info">
+<h3>طبق الشيف الخاص</h3>
+<p>طبق رئيسي محضّر بعناية ونكهات غنية.</p>
+<div class="price">$32</div>
+</div>
+</article>
+<article class="menu-card">
+<img alt="Artisan dessert" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&amp;fit=crop&amp;w=900&amp;q=85"/>
+<div class="menu-info">
+<h3>حلوى مميزة</h3>
+<p>حلوى لذيذة تكمل تجربة الطعام.</p>
+<div class="price">$14</div>
+</div>
+</article>
+</div>
+</section>
+<section class="about" id="about">
+<img alt="Elegant restaurant dining room" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/>
+<div>
+<div class="eyebrow">Our story</div>
+<h2>أكثر من مجرد طعام</h2>
+<p>في سافورا نؤمن بأن الطعام الجيد يجمع الناس. يجمع هذا النموذج بين حسن الضيافة والأجواء الجميلة والأطباق المحضّرة بعناية.</p>
+<p>كل تفصيل مصمم ليجعل زيارتك مميزة، من لحظة الترحيب إلى آخر لقمة.</p>
+<a class="btn" href="#reservation">احجز طاولتك</a>
+</div>
+</section>
+<section class="reservation" id="reservation">
+<div class="eyebrow">Join us</div>
+<h2>احجز طاولتك</h2>
+<p>خطط لأمسية مميزة مع سافورا.</p>
+<form id="booking-form">
+<input aria-label="الاسم" autocomplete="name" name="name" placeholder="اسمك" required="" type="text"/>
+<input aria-label="البريد الإلكتروني" autocomplete="email" name="email" placeholder="البريد الإلكتروني" required="" type="email"/>
+<input aria-label="Reservation date" name="date" required="" type="date"/>
+<select aria-label="Number of guests" name="guests" required="">
+<option value="">عدد الضيوف</option>
+<option value="1">ضيف واحد</option>
+<option value="2">ضيفان</option>
+<option value="3">3 ضيوف</option>
+<option value="4">4 ضيوف</option>
+<option value="5">5 ضيوف</option>
+<option value="6">6 ضيوف</option>
+</select>
+<button class="btn" type="submit">طلب حجز تجريبي</button>
+</form>
+<p aria-live="polite" class="form-note" id="booking-message" role="status">
+        تجربة فقط — لا يتم إرسال حجوزات حقيقية.
+      </p>
+</section>
+</main>
+<footer>
+<strong>SAVORA</strong>
+<p>مطعم راقٍ — نموذج موقع تجريبي</p>
+<p>نموذج من تصميم PixelCraft Web</p>
+</footer>
+<script>
+    const form = document.getElementById("booking-form");
+    const dateInput = form.elements.date;
+
+    const today = new Date();
+    const localDate = new Date(
+      today.getTime() - today.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0];
+
+    dateInput.min = localDate;
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("booking-message").textContent =
+        "تم استلام الطلب في هذه الصفحة التجريبية فقط. لم يتم إجراء أي حجز.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
